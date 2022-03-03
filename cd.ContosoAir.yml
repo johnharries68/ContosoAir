@@ -14,6 +14,20 @@ resources:
       branches:
         include:
           - master
+
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'specific'
+    project: 'a484a252-2815-4d0e-9335-09bb742d8d1f'
+    definition: '4'
+    specificBuildWithTriggering: true
+    buildVersionToDownload: 'latest'
+    targetPath: '$(Pipeline.Workspace)'
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
@@ -34,18 +48,6 @@ resources:
     appType: 'webApp'
     WebAppName: '$(web_prefix)-$(web_site)-$(web_environment)'
     packageForLinux: '$(Pipeline.Workspace)/**/*.zip'
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- task: DownloadPipelineArtifact@2
-  inputs:
-    buildType: 'specific'
-    project: 'a484a252-2815-4d0e-9335-09bb742d8d1f'
-    definition: '4'
-    specificBuildWithTriggering: true
-    buildVersionToDownload: 'latest'
-    targetPath: '$(Pipeline.Workspace)'
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
