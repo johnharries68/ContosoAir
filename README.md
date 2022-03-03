@@ -1,5 +1,5 @@
-# This project is retired, archived, and no longer supported. You are welcome to continue to use and fork the repository.
-
+# This project is a bit retired, archived, and no longer supported. You are welcome to continue to use and fork the repository.
+[![Build Status](https://dev.azure.com/johnharriesorg/johnharriesbrandnew/_apis/build/status/johnharries68.ContosoAir?branchName=master)](https://dev.azure.com/johnharriesorg/johnharriesbrandnew/_build/latest?definitionId=4&branchName=master)
 
 # Microsoft.Github CI Demo
 
